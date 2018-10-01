@@ -1,5 +1,2 @@
-# virtualenv
 venv/
-ENV/
-
 .DS_Store
