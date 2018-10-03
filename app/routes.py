@@ -15,26 +15,30 @@ def login():
         tokenID = form.tokenID.data
 
         # Fixed parameters
-        limit_playlist = 10
+        limit_playlist = 30
         limit_track = 50
 
         # Get list from spotify
-        data = spotify_API.get_audio_feat_user(tokenID, limit_playlist=limit_playlist, limit_track=limit_track)
+        try:
+            data = spotify_API.get_audio_feat_user(tokenID, limit_playlist=limit_playlist, limit_track=limit_track)
+
+        except ValueError as e:
+            # Print error in the main dashboard
+            return render_template('dashboard.html', error_text = e, form=form)
 
         # Call the graphic functions
-        fig_hist = analysis.plot_1d_features(data)
-        div_hist = Markup(fig_hist)
+        div_hist = Markup(analysis.plot_1d_features(data))
+        div_scatter = Markup(analysis.plot_2d_features(data))
 
         # Render table
         div_data = Markup(analysis.table_features(data))
 
         # Render template
-        return render_template('dashboard.html', div_hist=div_hist, div_data = div_data, form=form)
+        return render_template('dashboard.html', div_hist=div_hist, div_scatter = div_scatter, div_data = div_data, form=form)
 
 
     # If no button is pressed
-    div_all = ''
 
-    return render_template('dashboard.html',div_all=div_all , form=form)
+    return render_template('dashboard.html', form=form)
 
 

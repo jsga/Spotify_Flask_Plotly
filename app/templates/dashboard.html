@@ -17,7 +17,7 @@ body {
 
 /* Header/logo Title */
 .header {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background: #84bd00;
     color: black;
@@ -26,7 +26,7 @@ body {
 /* Style the top navigation bar */
 .navbar {
     display: flex;
-    background-color: #333;
+    background-color: #000000;
 }
 
 /* Style the navigation bar links */
@@ -53,7 +53,7 @@ body {
 /* Sidebar/left column */
 .side {
     flex: 20%;
-    background-color: #f1f1f1;
+    background-color: #ecebe8;
     padding: 20px;
 }
 
@@ -77,19 +77,19 @@ body {
 
 <!-- Navigation Bar -->
 <div class="navbar">
-  <a href="http://www.jsaezgallego.com">About the author</a>
+  <a href="https://github.com/jsga/Spotify_Flask_Plotly">Github repository</a>
+    <a href="http://www.jsaezgallego.com">About the author</a>
 </div>
 
 <!-- Header -->
 <div class="header">
   <h1>Spotify user data</h1>
-  <!--<p>With a <b>flexible</b> layout.</p>-->
 </div>
 
-<!-- The flexible grid (content) -->
+<!-- Side bar -->
 <div class="row">
   <div class="side">
-      <h3>Get your own data from the Spotify API</h3>
+      <p>Visualize your music from Spotify.</p>
       <p>
           <a href="https://developer.spotify.com/console/get-current-user-playlists/?limit=&offset=" target="_blank">Get your token here</a>
     </p>
@@ -108,21 +108,35 @@ body {
 <!-- Main page -->
   </div>
   <div class="main">
-    <h3>Histogram of interesting features</h3>
-    <div align="center">
-	    {{div_hist}}
-    </div>
+      {% if error_text %}
+      <h4>Error when calling the API. Please try again.</h4>
+      <p>Details: </p>
+        {{error_text}}
+      {% else %}
 
+
+      {% if div_hist %}
+        <h3>Histogram of interesting features</h3>
+        <div align="center">
+            {{div_hist}}
+        </div>
+      {% endif %}
+
+      {% if div_scatter %}
       <h3>Scatter plot</h3>
+      <p>The color of the dos represent the energy of the track</p>
     <div align="center">
-
+        {{div_scatter}}
     </div>
+    {% endif %}
 
+      {% if div_data %}
       <h3>Table of raw data</h3>
     <div align="center">
 	    {{div_data}}
     </div>
-
+      {% endif %}
+{% endif %}
 
   </div>
 </div>
