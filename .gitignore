@@ -9,3 +9,4 @@ utils/__pycache__/spotify_API.cpython-36.pyc
 *.pyc
 .DS_Store
 *.pyc
+.idea/
