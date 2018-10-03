@@ -10,7 +10,7 @@ This is a simple flask app that used the Spotify API to:
 
 The app is based on Flask and a single-paged [flexbox](https://www.w3schools.com/css/css3_flexbox.asp). The Api calls and the plots are made in Python 3 and the visualizations produced with Plotly figures.
 
-![App](screenshot/Screenshot_App.png)
+![App](https://github.com/jsga/Spotify_Flask_Plotly/blob/master/Screenshots/Screenshot_App.png)
 
 ## How to run it locally
 
@@ -25,7 +25,7 @@ Visit http://127.0.0.1:5000/
 
 Go to [Spotify for developers](https://developer.spotify.com/console/get-current-user-playlists/) website and press _"Get Token"_. The required scopes for the endpoint uses are "playlist-read-private".
 
-![Spotify screenshot](screenshots/Screenshot_Spotify.png)
+![Spotify screenshot](https://github.com/jsga/Spotify_Flask_Plotly/blob/master/Screenshots/Screenshot_Spotify.png)
 
 # What do the audio features mean?
 

@@ -8,3 +8,4 @@ app/__pycache__/routes.cpython-36.pyc
 utils/__pycache__/spotify_API.cpython-36.pyc
 *.pyc
 .DS_Store
+*.pyc
