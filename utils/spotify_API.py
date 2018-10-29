@@ -151,33 +151,3 @@ def get_audio_feat_user(tokenID,limit_track=50,limit_playlist = 10):
     audioFeat = get_audio_features(tokenID, track_info)
 
     return audioFeat
-
-
-#### TEST AREA
-
-#
-# tokenID = ''
-# limit = 10
-# offset = 0
-# playlist_info = get_playlists(tokenID, limit, offset)
-# print(playlist_info)
-#
-#
-# # get track list
-# track_info = get_tracks_playlists(tokenID,playlist_info,limit=50,offset=0)
-# track_info
-# len(track_info)
-#
-# # Get audio features
-# audioF = get_audio_features(tokenID, track_info)
-# #
-# try:
-#     tokenID = 'BQBCDI5hrLgF_HnrH9RoDKC-1m00yB9pw0ZS77mJHqPq-zOQkcDrre5NRabVwsAOp3mmnkx9XBsoloHcUKc8rTQiVifIuFhAHe4D3MifdsqNZ5qVRUlZ-_4UeIxvEYpq-CJr1664wKLQI6okEOXMlBOg-IZB33VoHFBS9pVxQiRcSu1p-OtrpE2uNWRamQ'
-#     data = get_audio_feat_user(tokenID,50,10)
-# except ValueError as e:
-#     print(e)
-
-# data.describe()
-#
-# # Save data as a csv, for later testings
-# data.to_csv('Testing_data.csv', sep='\t')

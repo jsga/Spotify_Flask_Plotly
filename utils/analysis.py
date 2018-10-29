@@ -78,6 +78,3 @@ def table_features(data):
 
     return df_table
 
-
-# TEST
-# data = pd.read_csv('Testing_data.csv',sep='\t')
